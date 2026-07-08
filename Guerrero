@@ -1,0 +1,36 @@
+public class Guerrero extends Personaje {
+
+    private String arma;
+
+    // Constructor
+    public Guerrero(String nombre, int nivel, int hp, int ataque, String arma) {
+
+        super(nombre, nivel, hp, ataque);
+
+        this.arma = arma;
+    }
+
+    // Atacar a otro personaje
+    public void atacar(Personaje objetivo) {
+
+        objetivo.recibirDanio(getAtaque());
+    }
+
+    // Getter
+    public String getArma() {
+        return arma;
+    }
+
+    // Setter
+    public void setArma(String arma) {
+        this.arma = arma;
+    }
+
+    // Sobrescribir mostrarInfo
+    @Override
+    public void mostrarInfo() {
+
+        super.mostrarInfo();
+        System.out.println("Arma: " + arma);
+    }
+}
