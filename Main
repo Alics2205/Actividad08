@@ -1,0 +1,43 @@
+public class Main {
+
+    public static void main(String[] args) {
+
+        Guerrero guerrero1 = new Guerrero(
+                "Leon",
+                5,
+                100,
+                25,
+                "Espada"
+        );
+
+        Guerrero guerrero2 = new Guerrero(
+                "Thor",
+                3,
+                80,
+                20,
+                "Hacha"
+        );
+
+        System.out.println("=== PERSONAJES ===");
+        guerrero1.mostrarInfo();
+
+        System.out.println();
+
+        guerrero2.mostrarInfo();
+
+        System.out.println();
+        System.out.println("=== ATAQUE ===");
+
+        guerrero1.atacar(guerrero2);
+
+        System.out.println(guerrero2.nombre + " ahora tiene " + guerrero2.getHp() + " HP.");
+
+        System.out.println();
+
+        System.out.println("=== SUBIR NIVEL ===");
+
+        guerrero1.subirNivel();
+
+        guerrero1.mostrarInfo();
+    }
+}
