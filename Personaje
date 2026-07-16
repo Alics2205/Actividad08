@@ -5,6 +5,7 @@ public class Personaje {
     private int hp;
     private int ataque;
 
+    // Constructor
     public Personaje(String nombre, int nivel, int hp, int ataque) {
 
         this.nombre = nombre;
@@ -13,6 +14,7 @@ public class Personaje {
         this.ataque = ataque;
     }
 
+    // Mostrar información
     public void mostrarInfo() {
 
         System.out.println("Nombre: " + nombre);
@@ -21,36 +23,37 @@ public class Personaje {
         System.out.println("Ataque: " + ataque);
     }
 
+    // Subir de nivel
     public void subirNivel() {
 
         nivel++;
-        hp = hp + 10;
-        ataque = ataque + 5;
+        hp += 10;
+        ataque += 5;
     }
 
+    // Recibir daño
     public void recibirDanio(int cantidad) {
 
-        hp = hp - cantidad;
+        hp -= cantidad;
 
         if (hp < 0) {
             hp = 0;
         }
     }
 
+    // Saber si sigue vivo
     public boolean estaVivo() {
 
-        if (hp > 0) {
-            return true;
-        }
-
-        return false;
+        return hp > 0;
     }
 
+    // Getter protegido
     protected int getAtaque() {
 
         return ataque;
     }
 
+    // Getter de HP
     public int getHp() {
 
         return hp;
