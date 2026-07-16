@@ -3,43 +3,47 @@ public class Main {
     public static void main(String[] args) {
 
         Guerrero g1 = new Guerrero(
-                "Leon",
+                "Aldo",
                 5,
                 100,
-                25,
-                "Espada"
+                20,
+                "Espada de fuego"
         );
 
         Guerrero g2 = new Guerrero(
-                "Thor",
-                3,
-                80,
-                20,
-                "Hacha"
+                "Nara",
+                4,
+                90,
+                15,
+                "Hacha de guerra"
         );
 
-        System.out.println("Guerrero 1");
+        System.out.println("=== PERSONAJE 1 ===");
         g1.mostrarInfo();
 
         System.out.println();
 
-        System.out.println("Guerrero 2");
+        System.out.println("=== PERSONAJE 2 ===");
         g2.mostrarInfo();
 
         System.out.println();
 
-        System.out.println("Ataque");
-
         g1.atacar(g2);
-
-        System.out.println(g2.nombre + " tiene " + g2.getHp() + " HP.");
 
         System.out.println();
 
-        System.out.println("Sube de nivel");
+        g2.mostrarInfo();
+        System.out.println("¿" + g2.nombre + " sigue vivo? " + g2.estaVivo());
+
+        System.out.println();
+
+        System.out.println(g1.nombre + " entrena y sube de nivel!");
 
         g1.subirNivel();
 
+        System.out.println();
+
+        System.out.println("=== PERSONAJE 1 (actualizado) ===");
         g1.mostrarInfo();
 
     }
