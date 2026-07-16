@@ -6,24 +6,15 @@ public class Guerrero extends Personaje {
     public Guerrero(String nombre, int nivel, int hp, int ataque, String arma) {
 
         super(nombre, nivel, hp, ataque);
-
         this.arma = arma;
     }
 
     // Atacar a otro personaje
-    public void atacar(Personaje objetivo) {
+    public void atacar(Personaje enemigo) {
 
-        objetivo.recibirDanio(getAtaque());
-    }
-
-    // Getter
-    public String getArma() {
-        return arma;
-    }
-
-    // Setter
-    public void setArma(String arma) {
-        this.arma = arma;
+        System.out.println(nombre + " ataca a " + enemigo.nombre + " con su " + arma + "!");
+        enemigo.recibirDanio(getAtaque());
+        System.out.println(enemigo.nombre + " recibió " + getAtaque() + " de daño.");
     }
 
     // Sobrescribir mostrarInfo
@@ -33,4 +24,5 @@ public class Guerrero extends Personaje {
         super.mostrarInfo();
         System.out.println("Arma: " + arma);
     }
+
 }
